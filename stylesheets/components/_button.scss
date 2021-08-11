@@ -8,6 +8,7 @@ $regular: #f5f5dc;
 $regularhover: #ffe4c4;
 $black: #999;
 $black-hover: #aa8;
+$orange: #ffa500;
 
 button {
   @include a.m-down('medium') {
@@ -46,3 +47,24 @@ button {
 // -----------------------------------------------------------------------------
 //? Wide button
 // -----------------------------------------------------------------------------
+.btn-wide {
+  background-color: $black;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  padding: 1.5rem 3rem;
+  @include a.on-event {
+    background-color: $regularhover;
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+.btn-wide {
+  @extend .btn-wide;
+  &--orange {
+    background-color: $orange;
+    @include a.on-event {
+      background-color: $black;
+    }
+  }
+}
