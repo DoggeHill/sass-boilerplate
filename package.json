@@ -1,0 +1,39 @@
+{
+  "name": "sass-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a sample project using the [7-1 architecture pattern](http://sass-guidelin.es/#architecture) and sticking to [Sass Guidelines](http://sass-guidelin.es) writing conventions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch stylesheets/main.scss:css/main.css",
+    "kozopič": "stylelint \"**/*.scss\"",
+    "kozopič-fix": "stylelint \"**/*.scss\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoggeHill/sass-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoggeHill/sass-boilerplate/issues"
+  },
+  "homepage": "https://github.com/DoggeHill/sass-boilerplate#readme",
+  "devDependencies": {
+    "bootstrap": "^5.0.2",
+    "sass": "^1.37.5",
+    "sass-migrator": "^1.5.1",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "sass-lint": "^1.13.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

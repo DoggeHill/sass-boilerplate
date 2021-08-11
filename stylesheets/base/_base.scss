@@ -1,12 +1,42 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+@use '../abstracts' as a;
 
 /**
- * Set up a decent box model on the root element
- */
+* Make REM unit adjustable according to the screen width
+* Set height to 100% to cover whole screen
+*/
 html {
+  // defaul set 1 REM == 10px 😍  (62.5% out of 16 is 10)
+  font-size: 62.5%;
+  height: 100%;
+ 
+  // for XXL screen- wider than 1500px
+  @include a.m-up('xxlarge') {
+    font-size: 70%;
+  }
+  @include a.m-down('medium') {
+    font-size: 60%;
+  }
+  @include a.m-down('small') {
+    font-size: 55%;
+  }
+  @include a.m-down('xsmall') {
+    font-size: 50%;
+  }
+}
+
+/**
+* Set up a decent box model on the root element
+* Add general text preset for all elements
+* Set height to 100% to cover whole screen
+ */
+body {
   box-sizing: border-box;
+  color: a.$text-color;
+  font: normal 100% / 1.4 a.$text-font-stack;
+  min-height: 100%;
 }
 
 /**
@@ -25,11 +55,10 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: a.$brand-color;
   text-decoration: none;
-
-  @include on-event {
-    color: $text-color;
+  @include a.on-event {
+    color: a.$text-color;
     text-decoration: underline;
   }
 }

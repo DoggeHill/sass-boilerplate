@@ -2,10 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-
-
 /// Regular font family
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
@@ -14,9 +10,9 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
-
-
-
+/// Icon font family
+/// @type Font family
+$icon-font-stack: 'icomoon' !default;
 
 /// Copy text color
 /// @type Color
@@ -38,31 +34,46 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
-
-
-
-
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
 
+/// Breakpoints
+/// Breakpoints max values
+$break-xl-max: 1199.98px;
+$break-lg-max: 991.98px;
+$break-md-max: 767.98px;
+$break-sm-max: 575.98px;
+$break-xs-max: 399.98px;
+$break-under6-max: 374.98px;
+// beakpoints MIN
+$break-xl-min: 1200px;
+$break-lg-min: 992px;
+$break-md-min: 768px;
+$break-sm-min: 576px;
+$break-x-special-s-min: 480px;
+$break-xs-min: 400px;
 
-
-
+$super-container-width: 1270px;
+$break-super-min: 1270px;
+$container-fluid-max: 1440px;
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
+  'xsmall': 450px,
+  'small': $break-sm-max,
+  //575.98
+  'medium': $break-md-max,
+  //767.95
+  'large': $break-lg-max,
+  //991.98
+  'xlarge': $break-xl-max,
+  //1199.92
+  'xxlarge': 1500px,
+
 ) !default;
-
-
-
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

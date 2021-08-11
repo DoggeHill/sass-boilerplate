@@ -1,5 +1,6 @@
 // -----------------------------------------------------------------------------
-// When having several themes, this file contains everything related to the
-// default one.
+// Index- Layout interface
 // -----------------------------------------------------------------------------
-@use '../abstracts' as a;
+
+@forward 'footer';
+@forward 'header';

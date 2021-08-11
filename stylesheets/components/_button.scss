@@ -1,3 +1,48 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+@use '../abstracts' as a;
+
+// Button abstracts
+$regular: #f5f5dc;
+$regularhover: #ffe4c4;
+$black: #999;
+$black-hover: #aa8;
+
+button {
+  @include a.m-down('medium') {
+    a {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+//? Regular button
+// -----------------------------------------------------------------------------
+.btn-regular {
+  background-color: $regular;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  @include a.on-event {
+    background-color: $regularhover;
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  @extend .btn-regular;
+  &--black {
+    background-color: $black;
+    @include a.on-event {
+      background-color: $black-hover;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+//? Wide button
+// -----------------------------------------------------------------------------

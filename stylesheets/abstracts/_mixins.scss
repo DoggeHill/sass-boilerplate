@@ -2,6 +2,9 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
+@use '../vendors/bootstrap';
+@use './variables' as v;
+
 /// Event wrapper
 /// @author Harry Roberts
 /// @param {Bool} $self [false] - Whether or not to include current selector
@@ -32,4 +35,44 @@
   }
 }
 
+//@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+//TODO: add breakpoints next, prev functions
 
+@mixin m-down($name) {
+  @include bootstrap.media-breakpoint-down($name, v.$breakpoints) {
+    @content;
+  }
+}
+
+@mixin m-up($name) {
+  @include bootstrap.media-breakpoint-up($name, v.$breakpoints) {
+    @content;
+  }
+}
+
+@mixin m-between($lower, $upper) {
+  @include bootstrap.media-breakpoint-between($lover, $upper, v.$breakpoints) {
+    @content;
+  }
+}
+
+@mixin m-exact($name) {
+  @include bootstrap.media-breakpoint-between($name, v.$breakpoints) {
+    @content;
+  }
+}
+
+///Hide scrollbar
+@mixin hide-scroll() {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  ::-webkit-scrollbar {
+    background: transparent; /* Optional: just make scrollbar invisible */
+    width: 0; /* Remove scrollbar space */
+  }
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #f00;
+  }
+}

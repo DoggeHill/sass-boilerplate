@@ -1,5 +1,7 @@
 // -----------------------------------------------------------------------------
-// When having several themes, this file contains everything related to the
-// default one.
+// Index- abstract interface
 // -----------------------------------------------------------------------------
-@use '../abstracts' as a;
+@forward 'functions';
+@forward 'mixins';
+@forward 'variables';
+
