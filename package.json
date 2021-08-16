@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch stylesheets/main.scss:css/main.css",
-    "kozopič": "stylelint \"**/*.scss\"",
-    "kozopič-fix": "stylelint \"**/*.scss\" --fix"
+    "lint": "stylelint \"**/*.scss\"",
+    "lint-fix": "stylelint \"**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
