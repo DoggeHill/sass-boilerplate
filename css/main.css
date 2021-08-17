@@ -2130,6 +2130,14 @@ a:hover, a:active, a:focus {
 }
 
 /**
+* There is margin by default on the bottom in some browsers
+* override this behavior
+*/
+p {
+  margin-bottom: 1rem;
+}
+
+/**
  * Clear inner floats
  */
 .clearfix::after {
@@ -2252,7 +2260,6 @@ body {
 .typography article span,
 .typography article p {
   color: #3a3333;
-  padding: 1rem;
 }
 .typography .h-1 {
   font-size: 5.5rem;
