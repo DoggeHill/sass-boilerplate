@@ -42,31 +42,28 @@ $max-width: 1180px !default;
 /// Breakpoints max values
 
 // TODO: think about the best breakpoints convention
-$break-mac-max: 1399.98px;
+$break-xxl-max: 1399.98px;
 $break-xl-max: 1199.98px;
 $break-lg-max: 991.98px;
 $break-md-max: 767.98px;
 $break-sm-max: 575.98px;
-$break-xs-max: 399.98px;
-$break-under6-max: 374.98px;
+$break-xs-max: 449.98px;
+
 // beakpoints MIN
+$break-xxl-min: 1400px;
 $break-xl-min: 1200px;
 $break-lg-min: 992px;
 $break-md-min: 768px;
 $break-sm-min: 576px;
-$break-x-special-s-min: 480px;
-$break-xs-min: 400px;
+$break-xs-min: 450px;
 
-
-$super-container-width: 1270px;
-$break-super-min: 1270px;
-$container-fluid-max: 1440px;
-
-/// Breakpoints map
+/// Breakpoints map - MAXMAP
+/// @link Minimal mediaqueries use development has been set on 360x640 based on https://gs.statcounter.com/screen-resolution-stats/mobile/europe
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'xsmall': 450px,
+  'xsmall': $break-xs-max,
+  //449.98
   'small': $break-sm-max,
   //575.98
   'medium': $break-md-max,
@@ -75,7 +72,27 @@ $breakpoints: (
   //991.98
   'xlarge': $break-xl-max,
   //1199.92
+
+) !default;
+
+/// Breakpoints map - MINMAP
+/// @link Minimal mediaqueries use development has been set on 360x640 based on https://gs.statcounter.com/screen-resolution-stats/mobile/europe
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+
+  //1500px --> infinity
   'xxlarge': 1500px,
+  //1200px
+  'xlarge': $break-xl-min,
+  //992px
+  'large': $break-lg-min,
+  //768px
+  'medium': $break-md-min,
+  //576px
+  'small': $break-sm-min,
+  //450px
+  'xsmall': $break-xs-min,
 
 ) !default;
 
