@@ -4,38 +4,33 @@
 @use '../abstracts' as a;
 
 // Button abstracts
-$regular: #f5f5dc;
-$regularhover: #ffe4c4;
-$black: #999;
-$black-hover: #aa8;
-$orange: #ffa500;
+$_regular: #f5f5dc !default;
+$_regular-hover: #ffe4c4 !default;
+$_black: #999 !default;
+$_black-hover: #aa8 !default;
+$_orange: #ffa500 !default;
 
-button {
-  @include a.m-down('medium') {
-    a {
-      font-size: 1rem;
-    }
-  }
-}
+
 
 
 // -----------------------------------------------------------------------------
 //? Regular button
 // -----------------------------------------------------------------------------
-.btn-regular {
+%btn-regular {
   background-color: $regular;
   border-radius: 25px;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   @include a.on-event {
-    background-color: $regularhover;
+    background-color: $regular-hover;
     color: currentColor;
     text-decoration: none;
   }
 }
 
 .btn {
-  @extend .btn-regular;
+  @extend %btn-regular;
+
   &--black {
     background-color: $black;
     @include a.on-event {
@@ -47,20 +42,21 @@ button {
 // -----------------------------------------------------------------------------
 //? Wide button
 // -----------------------------------------------------------------------------
-.btn-wide {
+%btn-wide {
   background-color: $black;
   border-radius: 25px;
   font-size: 1.5rem;
   padding: 1.5rem 3rem;
   @include a.on-event {
-    background-color: $regularhover;
+    background-color: $regular-hover;
     color: currentColor;
     text-decoration: none;
   }
 }
 
 .btn-wide {
-  @extend .btn-wide;
+  @extend %btn-wide;
+
   &--orange {
     background-color: $orange;
     @include a.on-event {
