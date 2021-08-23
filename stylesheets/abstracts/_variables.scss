@@ -58,7 +58,8 @@ $break-sm-min: 576px;
 $break-xs-min: 450px;
 
 /// Breakpoints map - MAX-MAP
-/// @link Minimal mediaqueries use development has been set on 360x640 based on https://gs.statcounter.com/screen-resolution-stats/mobile/europe
+/// Minimal mediaqueries use development has been set on 360x640 based on:
+/// @link https://gs.statcounter.com/screen-resolution-stats/mobile/europe 
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
@@ -75,7 +76,8 @@ $breakpoints: (
 );
 
 /// Breakpoints map - MIN-MAP
-/// @link Minimal mediaqueries use development has been set on 360x640 based on https://gs.statcounter.com/screen-resolution-stats/mobile/europe
+/// Minimal mediaqueries use development has been set on 360x640 based on:
+/// @link https://gs.statcounter.com/screen-resolution-stats/mobile/europe 
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints-min: (

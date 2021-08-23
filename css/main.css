@@ -2181,19 +2181,13 @@ p {
 /**
  * Basic typography style for copy text
  */
-@media (max-width: 767.96px) {
-  button a {
-    font-size: 1rem;
-  }
-}
-
-.btn-regular, .btn {
+.btn {
   background-color: #f5f5dc;
   border-radius: 25px;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
 }
-.btn-regular:hover, .btn:hover, .btn-regular:active, .btn:active, .btn-regular:focus, .btn:focus {
+.btn:hover, .btn:active, .btn:focus {
   background-color: #ffe4c4;
   color: currentColor;
   text-decoration: none;
@@ -2305,7 +2299,7 @@ input[type=tel],
 input[type=number],
 input[type=password],
 textarea {
-  background-color: #fff;
+  _background-color: #fff;
   border: solid 1px #000;
   border-radius: 4px;
   color: #0e726b;
@@ -2329,7 +2323,7 @@ input[type=password] + label,
 .password-input + label,
 textarea + label,
 .select2-container + label {
-  background-color: #fff;
+  _background-color: #fff;
   border-radius: 7px;
   font-size: 1.675rem;
   left: 1rem;
@@ -2364,7 +2358,7 @@ input[type=number]:placeholder-shown:not(:focus) + label,
 input[type=password]:placeholder-shown:not(:focus) + label,
 input[type=tel]:placeholder-shown:not(:focus) + label,
 .select2-container:placeholder-shown:not(:focus) + label {
-  background-color: transparent;
+  _background-color: transparent;
   color: #0e726b;
   left: 1rem;
   opacity: 1;
@@ -2417,7 +2411,7 @@ textarea {
   margin-bottom: 0;
 }
 textarea:placeholder-shown:not(:focus) + label {
-  background-color: transparent;
+  _background-color: transparent;
   left: 1rem;
   opacity: 1;
   top: 22px;
@@ -2458,9 +2452,9 @@ input[type=radio] {
   appearance: none;
   appearance: none;
   appearance: none;
-  /* background-color only for content */
+  /* _background-color only for content */
   background-clip: content-box;
-  background-color: #fff;
+  _background-color: #fff;
   border: 3px solid #000;
   border-radius: 50%;
   /* create custom radio button appearance */
@@ -2472,7 +2466,7 @@ input[type=radio] {
 
 /* appearance for checked radio button */
 input[type=radio]:checked {
-  background-color: #987654;
+  _background-color: #987654;
   border: 3px solid #987654;
 }
 
@@ -2493,7 +2487,7 @@ input[type=checkbox] {
   appearance: none;
   appearance: none;
   appearance: none;
-  background-color: transparent;
+  _background-color: transparent;
   border: 2px solid #0e726b;
   border-radius: 1px;
   cursor: pointer;
@@ -2508,7 +2502,7 @@ input[type=checkbox] {
 
 .checkbox > input:checked,
 input[type=checkbox]:checked {
-  background-color: #987654;
+  _background-color: #987654;
   border: 0;
 }
 

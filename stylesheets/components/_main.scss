@@ -1,3 +1,6 @@
+// -----------------------------------------------------------------------------
+// UI page
+// -----------------------------------------------------------------------------
 @use '../abstracts' as a;
 
 body {
@@ -29,7 +32,23 @@ body {
       line-height: 1.67;
       margin-bottom: 2.2rem;
       text-align: left;
+
+      // ! mediaqueries showcase
+      //// throws an error
+      // @include a.m-exact('what'){
+      //   font-size: 5rem;
+      // }
+      //// no media at all
+      // @include a.m-up(55px){
+      //   font-size: 5.54rem;
+      // }
+      //// this one is valid
+      // @include a.m-up("large){
+      //   font-size: 5.54rem;
+      // }
+
     }
+
 
     span,
     p {

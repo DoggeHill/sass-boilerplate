@@ -3,6 +3,14 @@
 // -----------------------------------------------------------------------------
 @use '../abstracts' as a;
 
+/// @link https://stackoverflow.com/questions/54084022/what-does-extend-must-be-used-with-a-placeholder-mean
+/// % selector explained
+
+/// @usage how to create a new button group
+/// 1. create a new abstract class e.g. %btn-wild
+/// 2. extend this abstract class in class selector you want to use e.g. .btn-wild
+/// 3. create different style modifiers according to BEM (--style)
+
 // Button abstracts
 $_regular: #f5f5dc !default;
 $_regular-hover: #ffe4c4 !default;
@@ -10,19 +18,17 @@ $_black: #999 !default;
 $_black-hover: #aa8 !default;
 $_orange: #ffa500 !default;
 
-
-
-
 // -----------------------------------------------------------------------------
 //? Regular button
 // -----------------------------------------------------------------------------
+
 %btn-regular {
-  background-color: $regular;
+  background-color: $_regular;
   border-radius: 25px;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   @include a.on-event {
-    background-color: $regular-hover;
+    background-color: $_regular-hover;
     color: currentColor;
     text-decoration: none;
   }
@@ -32,9 +38,9 @@ $_orange: #ffa500 !default;
   @extend %btn-regular;
 
   &--black {
-    background-color: $black;
+    background-color: $_black;
     @include a.on-event {
-      background-color: $black-hover;
+      background-color: $_black-hover;
     }
   }
 }
@@ -43,12 +49,12 @@ $_orange: #ffa500 !default;
 //? Wide button
 // -----------------------------------------------------------------------------
 %btn-wide {
-  background-color: $black;
+  background-color: $_black;
   border-radius: 25px;
   font-size: 1.5rem;
   padding: 1.5rem 3rem;
   @include a.on-event {
-    background-color: $regular-hover;
+    background-color: $_regular-hover;
     color: currentColor;
     text-decoration: none;
   }
@@ -58,9 +64,9 @@ $_orange: #ffa500 !default;
   @extend %btn-wide;
 
   &--orange {
-    background-color: $orange;
+    background-color: $_orange;
     @include a.on-event {
-      background-color: $black;
+      background-color: $_black;
     }
   }
 }

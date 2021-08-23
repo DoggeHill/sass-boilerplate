@@ -1,15 +1,17 @@
 // -----------------------------------------------------------------------------
-// This file contains forms styling
+// This file contains these styling:
+// 1. Basic form behavior
+// 2. Overrides base radio button style
+// 3. Overrides base checkbox style
 // -----------------------------------------------------------------------------
-
 @use '../abstracts' as a;
 
-$border-color: #000 !default;
-$background-color: #fff !default;
-$font-color: rgb(14, 114, 107) !default;
-$error-color: #d11818 !default;
-$right-color: #bada55 !default;
-$brand-color: #987654 !default;
+$_border-color: #000 !default;
+$_background-color: #fff !default;
+$_font-color: rgb(14, 114, 107) !default;
+$_error-color: #d11818 !default;
+$_right-color: #bada55 !default;
+$_brand-color: #987654 !default;
 
 /**
 ** Basic form styling
@@ -20,10 +22,10 @@ input[type='tel'],
 input[type='number'],
 input[type='password'],
 textarea {
-  background-color: $background-color;
-  border: solid 1px $border-color;
+  _background-color: $_background-color;
+  border: solid 1px $_border-color;
   border-radius: 4px;
-  color: $font-color;
+  color: $_font-color;
   display: block;
   height: 4.6rem;
   margin-bottom: 0;
@@ -44,7 +46,7 @@ input[type='password'] + label,
 .password-input + label,
 textarea + label,
 .select2-container + label {
-  background-color: $background-color;
+  _background-color: $_background-color;
   border-radius: 7px;
   font-size: 1.675rem;
   left: 1rem;
@@ -74,8 +76,8 @@ input[type='password'],
 input[type='tel'],
 .select2-container {
   &:placeholder-shown:not(:focus) + label {
-    background-color: transparent;
-    color: $font-color;
+    _background-color: transparent;
+    color: $_font-color;
     left: 1rem;
     opacity: 1;
     top: 50%;
@@ -89,7 +91,7 @@ input[type='tel'],
 
 input[type='password']:placeholder-shown:not(:focus) {
   p {
-    color: $error-color;
+    color: $_error-color;
   }
 }
 
@@ -100,13 +102,13 @@ input[type='number'],
 input[type='password'],
 textarea {
   &:focus {
-    border: 1px solid $border-color !important;
+    border: 1px solid $_border-color !important;
     box-shadow: none;
     outline: 0;
 
     + label,
     .password-input + label {
-      color: $right-color;
+      color: $_right-color;
       font-size: 1.325rem;
     }
   }
@@ -119,7 +121,7 @@ textarea {
   margin-bottom: 0;
 
   &:placeholder-shown:not(:focus) + label {
-    background-color: transparent;
+    _background-color: transparent;
     left: 1rem;
     opacity: 1;
     top: 22px;
@@ -136,7 +138,7 @@ textarea {
   0%,
   100% {
     background: transparent;
-    color: $font-color;
+    color: $_font-color;
   }
 }
 //webkit
@@ -163,10 +165,10 @@ input[type='radio'] {
   appearance: none;
   appearance: none;
   appearance: none;
-  /* background-color only for content */
+  /* _background-color only for content */
   background-clip: content-box;
-  background-color: $background-color;
-  border: 3px solid $border-color;
+  _background-color: $_background-color;
+  border: 3px solid $_border-color;
   border-radius: 50%;
   /* create custom radio button appearance */
   display: inline-block;
@@ -177,8 +179,8 @@ input[type='radio'] {
 
 /* appearance for checked radio button */
 input[type='radio']:checked {
-  background-color: $brand-color;
-  border: 3px solid $brand-color;
+  _background-color: $_brand-color;
+  border: 3px solid $_brand-color;
 }
 
 /**
@@ -199,8 +201,8 @@ input[type='checkbox'] {
   appearance: none;
   appearance: none;
   appearance: none;
-  background-color: transparent;
-  border: 2px solid $font-color;
+  _background-color: transparent;
+  border: 2px solid $_font-color;
   border-radius: 1px;
   cursor: pointer;
   flex-shrink: 0;
@@ -214,13 +216,13 @@ input[type='checkbox'] {
 
 .checkbox > input:checked,
 input[type='checkbox']:checked {
-  background-color: $brand-color;
+  _background-color: $_brand-color;
   border: 0;
 }
 
 .checkbox > input:checked::before,
 input[type='checkbox']:checked::before {
-  color: $background-color;
+  color: $_background-color;
   content: '\e921';
   display: block;
   font-family: 'iconmoon';
@@ -233,12 +235,12 @@ input[type='checkbox']:checked::before {
 
 .checkbox > input:active,
 input[type='checkbox']:active {
-  border: 2px solid $font-color;
+  border: 2px solid $_font-color;
 }
 
 input[type='checkbox'] {
   @include a.on-event {
-    border: 2px solid $brand-color;
+    border: 2px solid $_brand-color;
     transition: all 0.4s ease-in;
   }
 }

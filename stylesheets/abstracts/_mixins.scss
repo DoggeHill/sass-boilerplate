@@ -26,18 +26,10 @@
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Kitty Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
-    @content;
-  }
-}
-
-//@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-//TODO: add breakpoints next, prev functions
-
+/// Media queries manager
+/// @author Patrik
+/// @link https://getbootstrap.com/docs/5.0/layout/breakpoints/
+/// this is an implementation of bootstrap5 scss solution
 @mixin m-down($name) {
   @include bootstrap.media-breakpoint-down($name, v.$breakpoints) {
     @content;
@@ -57,12 +49,13 @@
 }
 
 @mixin m-exact($name) {
-  @include bootstrap.media-breakpoint-between($name, v.$breakpoints) {
+  @include bootstrap.media-breakpoint-only($name, v.$breakpoints) {
     @content;
   }
 }
 
-///Hide scrollbar
+/// Hide scrollbar
+/// @link https://stackoverflow.com/a/30680994/6624955
 @mixin hide-scroll() {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
@@ -71,8 +64,17 @@
     background: transparent; /* Optional: just make scrollbar invisible */
     width: 0; /* Remove scrollbar space */
   }
-  /* Optional: show position indicator in red */
+  /* Optional: show position indicator in black */
   ::-webkit-scrollbar-thumb {
-    background: #f00;
+    background: #ff00;
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
   }
 }
