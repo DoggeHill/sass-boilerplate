@@ -1725,6 +1725,13 @@
     border-radius: 0;
   }
 }
+/**
+ * This is help style for positioning img in box.
+ * padding-bottom: says about ratio
+ * class box-img-* *-cover so img is cover
+ * class box-img-* *-contain so img is contain
+ * @author Samuel_Líška
+**/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -2176,6 +2183,47 @@ p {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.box-img-cover {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.box-img-cover img {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.box-img-contain {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+}
+.box-img-contain img {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /**

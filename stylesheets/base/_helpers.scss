@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
-
+@use '../abstracts' as a;
 /**
  * Clear inner floats
  */
@@ -44,4 +44,13 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+/// Make img cover position with capability od ratio
+.box-img-cover {
+  @include a.box-img-cover;
+}
+/// Make img contain position with capability od ratio
+.box-img-contain {
+  @include a.box-img-contain;
 }

@@ -78,3 +78,53 @@
     @content;
   }
 }
+
+/**
+ * This is help style for positioning img in box.
+ * padding-bottom: says about ratio
+ * class box-img-* *-cover so img is cover
+ * class box-img-* *-contain so img is contain
+ * @author Samuel_Líška
+**/
+@mixin box-img-cover {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@mixin box-img-contain {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+
+  img {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
